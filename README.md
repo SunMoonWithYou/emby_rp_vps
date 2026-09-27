@@ -25,22 +25,10 @@
 
 ## 快速开始
 
-### 1. 下载脚本
+### 1. 运行脚本
 
 ```bash
-wget -O install.sh https://raw.githubusercontent.com/SunMoonWithYou/emby_rp_vps/main/install.sh
-```
-
-### 2. 赋予执行权限
-
-```bash
-chmod +x install.sh
-```
-
-### 3. 运行
-
-```bash
-sudo ./install.sh
+sudo bash -c "$(curl -L https://raw.githubusercontent.com/SunMoonWithYou/emby_rp_vps/main/install.sh)" @ install
 ```
 
 进入菜单后选择 `[1] 安装 / 初始化`，按提示操作。
