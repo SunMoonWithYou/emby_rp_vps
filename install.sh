@@ -125,7 +125,7 @@ svc_restart(){
     systemctl daemon-reload
     systemctl restart emby-proxy 2>/dev/null || {
         # 如果 systemd 重启失败，退化为直接杀进程 + 手动启动
-        pkill -f 'nginx: master' 2>/dev/null
+        pkill -f '^nginx: master' 2>/dev/null
         sleep 1
         /usr/local/openresty/bin/openresty
     }
@@ -138,7 +138,7 @@ svc_reload(){ systemctl reload emby-proxy 2>/dev/null || openresty -s reload 2>/
 svc_stop(){
     systemctl stop emby-proxy 2>/dev/null
     systemctl stop openresty 2>/dev/null
-    pkill -f 'nginx: master' 2>/dev/null
+    pkill -f '^nginx: master' 2>/dev/null
     true
 }
 
